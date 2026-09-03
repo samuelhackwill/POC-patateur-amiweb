@@ -2,6 +2,8 @@
 
 Responsive blob text prototype.
 
+Live site: https://samuelhackwill.github.io/POC-patateur-amiweb/
+
 ## Notes
 
 - Goal: keep arbitrary-length text inside organic vector blobs without stretching a fixed asset.
