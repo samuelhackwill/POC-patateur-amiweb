@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patateur</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="control-panel" aria-label="Patateur controls">
+        <div class="brand-block">
+          <p class="kicker">POC</p>
+          <h1>Patateur</h1>
+        </div>
+
+        <section class="control-section" aria-label="Big potato controls">
+          <h2>Big potato</h2>
+
+          <label class="control control-text">
+            <span>Text</span>
+            <textarea id="mainTextInput" spellcheck="false" wrap="soft">L'Amicale est une plateforme cooperative de production et diffusion de projets vivants.</textarea>
+          </label>
+
+          <div class="control-grid">
+            <label class="control">
+              <span>Fit <output id="mainFitValue">73</output></span>
+              <input id="mainFitInput" type="range" min="0" max="100" value="73" />
+            </label>
+
+            <label class="control">
+              <span>Wobble <output id="mainWobbleValue">100</output></span>
+              <input id="mainWobbleInput" type="range" min="0" max="100" value="100" />
+            </label>
+
+            <label class="control">
+              <span>Max width <output id="mainMaxWidthValue">620</output></span>
+              <input id="mainMaxWidthInput" type="range" min="220" max="760" value="620" />
+            </label>
+
+            <label class="control">
+              <span>Frame <output id="frameValue">760</output></span>
+              <input id="frameInput" type="range" min="280" max="920" value="760" />
+            </label>
+          </div>
+
+          <div class="row-controls">
+            <label class="control seed-control">
+              <span>Seed</span>
+              <input id="mainSeedInput" type="number" min="1" max="99999" value="7319" />
+            </label>
+
+            <label class="control tone-control">
+              <span>Tone</span>
+              <select id="mainToneInput">
+                <option value="ink">Ink</option>
+                <option value="fog">Fog</option>
+                <option value="moss">Moss</option>
+                <option value="paper">Paper</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="button-row">
+            <button id="newMainSeedButton" type="button">New big seed</button>
+            <button id="resetButton" type="button">Reset</button>
+          </div>
+
+          <label class="check-control">
+            <input id="mainSafeBoxInput" type="checkbox" />
+            <span>Big safe box</span>
+          </label>
+        </section>
+
+        <section class="control-section" aria-label="Bottom potato controls">
+          <h2>Bottom potatoes</h2>
+
+          <div class="control-grid">
+            <label class="control">
+              <span>Fit <output id="sampleFitValue">100</output></span>
+              <input id="sampleFitInput" type="range" min="0" max="100" value="100" />
+            </label>
+
+            <label class="control">
+              <span>Wobble <output id="sampleWobbleValue">0</output></span>
+              <input id="sampleWobbleInput" type="range" min="0" max="100" value="0" />
+            </label>
+
+            <label class="control">
+              <span>Max width <output id="sampleMaxWidthValue">300</output></span>
+              <input id="sampleMaxWidthInput" type="range" min="180" max="420" value="300" />
+            </label>
+          </div>
+
+          <div class="row-controls">
+            <label class="control seed-control">
+              <span>Seed base</span>
+              <input id="sampleSeedInput" type="number" min="1" max="99999" value="1200" />
+            </label>
+
+            <label class="check-control align-end">
+              <input id="sampleSafeBoxInput" type="checkbox" />
+              <span>Small safe boxes</span>
+            </label>
+          </div>
+
+          <button id="newSampleSeedButton" type="button">New bottom seeds</button>
+        </section>
+      </aside>
+
+      <section class="workspace" aria-label="Blob preview">
+        <div class="stage-frame" id="stageFrame">
+          <div
+            class="blob-text tone-ink is-main"
+            data-blob-text
+            data-seed="7319"
+            data-tone="ink"
+          >
+            <svg class="blob-svg" aria-hidden="true" focusable="false">
+              <path class="blob-path"></path>
+            </svg>
+            <div class="safe-rect" aria-hidden="true"></div>
+            <p class="blob-copy" id="previewCopy">L'Amicale est une plateforme cooperative de production et diffusion de projets vivants.</p>
+          </div>
+        </div>
+
+        <div class="sample-strip" aria-label="Responsive samples">
+          <div class="sample-frame sample-small" data-sample-frame>
+            <div class="blob-text tone-ink" data-blob-text data-sample-blob data-seed-offset="0">
+              <svg class="blob-svg" aria-hidden="true" focusable="false">
+                <path class="blob-path"></path>
+              </svg>
+              <div class="safe-rect" aria-hidden="true"></div>
+              <p class="blob-copy">Prochaines dates :</p>
+            </div>
+          </div>
+
+          <div class="sample-frame sample-medium" data-sample-frame>
+            <div class="blob-text tone-fog" data-blob-text data-sample-blob data-seed-offset="97">
+              <svg class="blob-svg" aria-hidden="true" focusable="false">
+                <path class="blob-path"></path>
+              </svg>
+              <div class="safe-rect" aria-hidden="true"></div>
+              <p class="blob-copy">conception web :<br />Antoine Defoort<br />Vincent Dilly<br />Samuel Hackwill</p>
+            </div>
+          </div>
+
+          <div class="sample-frame sample-tight" data-sample-frame>
+            <div class="blob-text tone-moss" data-blob-text data-sample-blob data-seed-offset="211">
+              <svg class="blob-svg" aria-hidden="true" focusable="false">
+                <path class="blob-path"></path>
+              </svg>
+              <div class="safe-rect" aria-hidden="true"></div>
+              <p class="blob-copy">A narrower responsive column keeps wrapping first, then redraws the blob around the new line breaks.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
