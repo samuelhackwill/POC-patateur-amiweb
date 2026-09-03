@@ -34,7 +34,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_PATH: /POC-amiweb-patateur/
+          VITE_BASE_PATH: /POC-patateur-amiweb/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

@@ -31,7 +31,7 @@ npm run dev
 The Pages workflow builds the site with:
 
 ```sh
-VITE_BASE_PATH=/POC-amiweb-patateur/ npm run build
+VITE_BASE_PATH=/POC-patateur-amiweb/ npm run build
 ```
 
 If the GitHub repository name is different, update `VITE_BASE_PATH` in `.github/workflows/deploy.yml`.
