@@ -1,3 +1,5 @@
+@import "./src/patateur.css";
+
 :root {
   color-scheme: dark;
   --page-bg: #363636;
@@ -65,6 +67,13 @@ select {
 .brand-block {
   display: grid;
   gap: 6px;
+}
+
+.demo-link {
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-underline-offset: 3px;
 }
 
 .control-section {
@@ -284,6 +293,7 @@ button:active {
   --blob-pad-x: 36px;
   --blob-pad-y: 24px;
   --blob-max: 620px;
+  padding: var(--blob-pad-y) var(--blob-pad-x);
   position: relative;
   width: fit-content;
   max-width: min(100%, var(--blob-max));
@@ -297,16 +307,7 @@ button:active {
   font-size: 3.2rem;
 }
 
-.blob-svg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-
-.blob-path {
+.patateur-path {
   transition: fill 160ms ease;
 }
 
@@ -327,7 +328,6 @@ button:active {
 .blob-copy {
   max-width: min(100%, var(--blob-max));
   margin: 0;
-  padding: var(--blob-pad-y) var(--blob-pad-x);
   position: relative;
   font-size: inherit;
   font-weight: 670;
@@ -338,24 +338,24 @@ button:active {
   hyphens: none;
 }
 
-.tone-ink .blob-path {
-  fill: var(--ink);
+.tone-ink {
+  --patateur-fill: var(--ink);
 }
 
-.tone-fog .blob-path {
-  fill: var(--fog);
+.tone-fog {
+  --patateur-fill: var(--fog);
 }
 
-.tone-moss .blob-path {
-  fill: var(--moss);
+.tone-moss {
+  --patateur-fill: var(--moss);
 }
 
 .tone-paper {
   color: var(--paper-text);
 }
 
-.tone-paper .blob-path {
-  fill: var(--paper);
+.tone-paper {
+  --patateur-fill: var(--paper);
 }
 
 @media (max-width: 880px) {

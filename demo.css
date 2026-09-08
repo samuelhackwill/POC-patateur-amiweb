@@ -1,0 +1,100 @@
+@import "./src/patateur.css";
+
+:root {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #25271f;
+  background: #f4f1e9;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+button, a, input { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-underline-offset: 4px; }
+button { cursor: pointer; }
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 2px solid #a6381b;
+  outline-offset: 5px;
+}
+
+.demo-shell { max-width: 1440px; margin: auto; padding: 0 48px; }
+.page-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 28px 0; border-bottom: 1px solid #cccbbf; }
+.wordmark { font-size: 23px; font-weight: 750; text-decoration: none; letter-spacing: -1px; }
+.wordmark span { margin-left: 8px; color: #7b805f; }
+.edition { font-size: 13px; }
+.intro { max-width: 800px; padding: 64px 0 38px; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
+h1 { margin: 16px 0 20px; font-size: clamp(64px, 8.4vw, 112px); line-height: .95; font-weight: 550; letter-spacing: -.065em; }
+h1 span { font-family: Georgia, serif; font-weight: 400; font-style: italic; color: #737956; }
+.intro-copy { max-width: 560px; font-size: 17px; line-height: 1.5; }
+.toolbar { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 24px; border-block: 1px solid #cccbbf; padding: 20px 0; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.actions button { padding: 11px 16px; border: 1px solid #b7b9aa; background: transparent; border-radius: 5px; color: inherit; font-size: 13px; }
+.actions button:first-child { background: #272c22; color: #faf7ef; border-color: #272c22; }
+.actions button:hover { background: #e1e1d4; }
+.actions button:first-child:hover { background: #424b37; }
+.actions button:disabled { opacity: .45; cursor: default; background: transparent; }
+.actions button span { margin-left: 12px; }
+.layout-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; font-size: 12px; }
+.width-control { display: grid; grid-template-columns: 1fr auto; gap: 5px 16px; }
+.width-control input { grid-column: 1 / -1; width: 150px; margin: 0; accent-color: #4c5f3d; }
+.toggle { display: flex; gap: 7px; align-items: center; cursor: pointer; }
+.toggle input { accent-color: #4c5f3d; width: 16px; height: 16px; }
+.mixed-flow { width: var(--board-width, 100%); margin: 38px auto 24px; }
+.flow-heading h2 { margin: 0 0 8px; font-size: 26px; font-weight: 550; letter-spacing: -.8px; }
+.flow-heading > p { margin: 0; color: #66695c; font-size: 14px; line-height: 1.5; }
+.flow-examples { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px 48px; margin-top: 28px; }
+.flow-example { min-width: 0; }
+.flow-copy { margin: 14px 0; font-size: 21px; line-height: 2; overflow-wrap: anywhere; }
+.plain-aside { color: #66695c; font-size: 14px; line-height: 1.5; }
+.short-potato { --patateur-fill: #d7ddbc; position: relative; display: inline-block; max-width: 100%; padding: 10px 16px; margin: 4px 3px; vertical-align: middle; background: var(--patateur-fill); color: #25271f; font-size: 17px; line-height: 1.3; }
+.short-potato.patateur { background: transparent; }
+.short-potato[data-short="two"] { --patateur-fill: #efb699; }
+.short-copy { white-space: pre-line; }
+.flow-row { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; padding: 24px 0; margin-top: 24px; border-block: 1px solid #cccbbf; font-size: 17px; line-height: 1.4; }
+.flow-row > span { min-width: 0; overflow-wrap: anywhere; }
+.board-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 20px; font-size: 12px; color: #66695c; padding: 13px 0 20px; }
+.board { width: var(--board-width, 100%); margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)); gap: 28px; align-items: start; }
+.demo-card {
+  --patateur-fill: #e3e5d4;
+  min-width: 0;
+  position: relative;
+  padding: 30px 32px 34px;
+  background: var(--patateur-fill);
+  overflow-wrap: anywhere;
+}
+.demo-card.patateur { background: transparent; }
+.demo-card[data-tone="ink"] { --patateur-fill: #282e24; color: #f5f1df; }
+.demo-card[data-tone="moss"] { --patateur-fill: #d7ddbc; }
+.demo-card[data-tone="peach"] { --patateur-fill: #efb699; }
+.demo-card[data-tone="butter"] { --patateur-fill: #ede09a; }
+.demo-card[data-tone="fog"] { --patateur-fill: #dcded9; }
+.demo-card[data-decoration="plain"] { background: transparent; color: #25271f; }
+.card-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 25px; }
+.card-label { margin: 0; font-size: 10px; font-weight: 650; letter-spacing: 1.5px; text-transform: uppercase; }
+.remove-card { color: inherit; background: transparent; border: 0; font-size: 22px; line-height: 1; padding: 2px 6px; opacity: .65; }
+.remove-card:hover { opacity: 1; }
+.card-body h2 { margin: 0 0 15px; font-size: 30px; line-height: 1.07; font-weight: 550; letter-spacing: -1px; }
+.card-body p { margin: 0; font-size: 17px; line-height: 1.45; white-space: pre-wrap; }
+.card-body blockquote { margin: 0; font: 29px/1.2 Georgia, serif; letter-spacing: -.6px; }
+.card-body ul { margin: 0; padding-left: 19px; font-size: 18px; line-height: 1.65; }
+.demo-card[data-kind="idea"] .card-body p { font-size: 36px; line-height: 1.07; letter-spacing: -1.3px; }
+.demo-card[data-kind="postcard"] .card-body p { font-family: Georgia, serif; font-size: 22px; }
+.empty-board { grid-column: 1 / -1; padding: 48px 0; text-align: center; }
+footer { margin-top: 70px; padding: 24px 0 36px; border-top: 1px solid #cccbbf; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; font-size: 12px; }
+footer p { margin: 0; }
+
+@media (max-width: 600px) {
+  .demo-shell { padding: 0 22px; }
+  .page-header { padding: 20px 0; }
+  .edition { max-width: 130px; text-align: right; font-size: 11px; }
+  .intro { padding-top: 40px; }
+  .intro-copy { font-size: 16px; }
+  .toolbar, .layout-controls { gap: 20px; }
+  .board { gap: 22px; }
+  .demo-card { padding: 25px 22px 28px; }
+  .demo-card[data-kind="idea"] .card-body p { font-size: 29px; }
+  .card-body blockquote { font-size: 24px; }
+  .card-body h2 { font-size: 25px; }
+}
